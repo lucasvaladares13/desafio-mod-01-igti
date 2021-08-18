@@ -20,10 +20,3 @@ for file in list_file:
     s3_client.upload_file(upload_path,'datalake-lucas-igti-01','raw-data/desafio-modulo-01/'+file)
     print("ingestao concluida")
 
-"""
-#Fazer ingestão de Dados no S3
-
-#s3_client = boto3.client('s3')
-#s3_client.upload_file('data/MICRODADOS_ENEM_2019.csv','datalake-lucas-516190547158','raw-data/MICRODADOS_ENEM_2019.csv')
-
-"""
