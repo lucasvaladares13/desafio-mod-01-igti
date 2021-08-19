@@ -7,9 +7,3 @@ resource "aws_s3_bucket_object" "job_spark" {
 
 }
 
-resource "aws_s3_object_copy" "S3_file" {
-  bucket = aws_s3_bucket.dl.id
-  acl    = "private"
-  key    = "raw-data/matricula/"
-  source = "s3://datalake-lucas-igti-desafio-mod-01/raw-data/matricula/"
-}
