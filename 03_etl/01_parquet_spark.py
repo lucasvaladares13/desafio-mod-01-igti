@@ -21,7 +21,7 @@ file = ( spark
         .load("s3://datalake-lucas-igti-01/raw-data/desafio-modulo-01/matricula/")
        )
 
-(
+"""(
     file
     .write
     .mode("overwrite")
@@ -30,7 +30,7 @@ file = ( spark
     .option("inferSchema",True)
     .option("delimiter",";")
     .save("s3://datalake-lucas-igti-desafio-mod-01/raw-data/matricula/")
-)
+)"""
 
 (
     file
