@@ -1,4 +1,4 @@
-resource "aws_glue_job" "01_parquet_spark" {
+resource "aws_glue_job" "glue_parquet_spark" {
   name     = "01_parquet_spark"
   role_arn = aws_iam_role.glue_role.arn
 
