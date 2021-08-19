@@ -1,11 +1,16 @@
-from pyspark.sql.functions import mean,max,min,col
-from pyspark.sql import SparkSession
+import sys
+from pyspark.context import SparkContext
+from awsglue.utils import getResolvedOptions
+from awsglue.context import GlueContext
+from awsglue.job import Job
 
-spark = (
-            SparkSession.builder.appName("ETLSpark")
-            .get0rCreate()
-        )
+args = getResolvedOptions(sys.argv,['JOB_NAME'])
 
+sc = SparkContext()
+glueContext = GlueContext(sc)
+spark = glueContext.spark_session
+job = Job(glueContext)
+job.init(args['JOB_NAME'], args)
 
 file = ( spark
         .read
@@ -16,7 +21,7 @@ file = ( spark
         .load("s3://datalake-lucas-igti-01/raw-data/desafio-modulo-01/matricula/")
        )
 
-(
+"""(
     file
     .write
     .mode("overwrite")
@@ -25,7 +30,7 @@ file = ( spark
     .option("inferSchema",True)
     .option("delimiter",";")
     .save("s3://datalake-lucas-igti-desafio-mod-01/raw-data/matricula/")
-)
+)"""
 
 (
     file
