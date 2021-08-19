@@ -8,6 +8,6 @@ terraform {
   backend "s3" {
     bucket = "terraform-state-lucas-igti"
     key = "state/igti/edc/mod1/usecase01/terraform.tfstate"
-    region = var.aws_region
+    region = "us-east-2"
   }
 } 
