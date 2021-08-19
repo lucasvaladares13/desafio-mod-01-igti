@@ -1,4 +1,4 @@
-resource "aws_glue_catalog_table" aws_glue_desafio_mod_01_table_02" {
+resource "aws_glue_catalog_table" "aws_glue_desafio_mod_01_table_02" {
   name          = "table_desafio_mod_01_v02"
   database_name = aws_glue_catalog_database.aws_glue_desafio_mod_01_database.name
 
